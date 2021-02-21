@@ -61,7 +61,7 @@ evaluation:
         cv_score_path: metrics/cv_roc_auc.json
         test_score_path: metrics/test_roc_auc.json
       model_params:
-        C: 1.0
+        C: 0.8
         fit_intercept: true
   outs:
   - path: metrics/cv_roc_auc.json
