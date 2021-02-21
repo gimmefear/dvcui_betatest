@@ -48,8 +48,8 @@ evaluation:
     md5: 0204f1a3a712695b68c151532fffb102
     size: 6690
   - path: src/pipelines/evaluate.py
-    md5: c51ffb502d78e468f98892ad0fa2af55
-    size: 1889
+    md5: 8262c0fb6987026f93e82d8e9eee3aa0
+    size: 1757
   params:
     params.yaml:
       WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
@@ -57,16 +57,11 @@ evaluation:
         iris_data_path: data/iris_data.fth
         train_data_path: data/train.fth
         test_data_path: data/test.fth
-      metrics_save_paths:
-        cv_score_path: metrics/cv_roc_auc.json
-        test_score_path: metrics/test_roc_auc.json
+      metrics_save_paths: metrics/metrics.json
       model_params:
         C: 0.8
         fit_intercept: true
   outs:
-  - path: metrics/cv_roc_auc.json
-    md5: a53bed785a972cb8fc0dd7451907159c
-    size: 18
-  - path: metrics/test_roc_auc.json
-    md5: e4c2e8edac362acab7123654b9e73432
-    size: 3
+  - path: metrics/metrics.json
+    md5: e1c8c9674e7823df9698e62550c7cbf9
+    size: 51

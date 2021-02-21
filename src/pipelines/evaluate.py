@@ -40,18 +40,16 @@ if __name__ == "__main__":
     WORKDIR = params["WORK_DIR"]
     TRAIN_PATH = params["data_save_paths"]["train_data_path"]
     TEST_PATH = params["data_save_paths"]["test_data_path"]
-    CV_SCORE_PATH = params["metrics_save_paths"]["cv_score_path"]
-    TEST_SCORE_PATH = params["metrics_save_paths"]["test_score_path"]
+    METRICS_PATH = params["metrics_save_paths"]
 
     train = pd.read_feather(os.path.join(WORKDIR, TRAIN_PATH))
     test = pd.read_feather(os.path.join(WORKDIR, TEST_PATH))
     model_params = params["model_params"]
 
     cv_score, test_score = evaluate(train, test, model_params)
+    metrics = {}
+    metrics["CV_SCORE"] = cv_score
+    metrics["TEST_SCORE"] = test_score
 
-    with open(os.path.join(WORKDIR, CV_SCORE_PATH), "w") as f:
-        json.dump(cv_score, f)
-        f.close()
-    with open(os.path.join(WORKDIR, TEST_SCORE_PATH), "w") as f:
-        json.dump(test_score, f)
-        f.close()
+    with open(os.path.join(WORKDIR, METRICS_PATH), "w") as f:
+        json.dump(metrics, f)

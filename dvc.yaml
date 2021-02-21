@@ -31,9 +31,7 @@ stages:
       - metrics_save_paths
       - model_params
     metrics:
-      - metrics/cv_roc_auc.json:
-          cache: True
-      - metrics/test_roc_auc.json:
-          cache: True
+      - metrics/metrics.json:
+          cache: true
     
 
