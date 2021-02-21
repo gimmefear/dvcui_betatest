@@ -1,0 +1,22 @@
+stages:
+  data_load:
+    cmd: python src/pipelines/load_data.py
+    deps:
+      - 'src/pipelines/load_data.py'
+    params:
+      - WORK_DIR
+      - data_save_paths
+    outs:
+      - data/iris_data.fth
+  splitting:
+    cmd: python src/pipelines/split.py
+    deps:
+      - src/pipelines/split.py
+      - data/iris_data.fth
+    params:
+      - WORK_DIR
+      - data_save_paths
+    outs:
+      - data/train.fth
+      - data/test.fth
+

@@ -1,0 +1,6 @@
+PIPELINES_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test/src/pipelines/
+WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
+data_save_paths:
+  iris_data_path: 'data/iris_data.fth'
+  train_data_path: 'data/train.fth'
+  test_data_path: 'data/test.fth'
