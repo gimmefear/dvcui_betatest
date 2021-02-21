@@ -32,6 +32,7 @@ stages:
       - model_params
     metrics:
       - metrics/metrics.json:
-          cache: true
+          cache: 
+            false
     
 

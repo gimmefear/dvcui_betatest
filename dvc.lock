@@ -48,8 +48,8 @@ evaluation:
     md5: 0204f1a3a712695b68c151532fffb102
     size: 6690
   - path: src/pipelines/evaluate.py
-    md5: 8262c0fb6987026f93e82d8e9eee3aa0
-    size: 1757
+    md5: d5f98a3253dd35f5b0c73995e59dd189
+    size: 1756
   params:
     params.yaml:
       WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
@@ -59,7 +59,7 @@ evaluation:
         test_data_path: data/test.fth
       metrics_save_paths: metrics/metrics.json
       model_params:
-        C: 0.8
+        C: 0.9
         fit_intercept: true
   outs:
   - path: metrics/metrics.json
