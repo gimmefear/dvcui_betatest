@@ -6,5 +6,5 @@ data_save_paths:
   test_data_path: 'data/test.fth'
 metrics_save_paths: metrics/metrics.json
 model_params:
-  C: 0.9
+  C: 0.8
   fit_intercept: True
