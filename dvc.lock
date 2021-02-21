@@ -60,8 +60,8 @@ evaluation:
       metrics_save_paths: metrics/metrics.json
       model_params:
         C: 0.8
-        fit_intercept: true
+        fit_intercept: false
   outs:
   - path: metrics/metrics.json
-    md5: e1c8c9674e7823df9698e62550c7cbf9
+    md5: 2922c77f6a352241a323fbe78acd7982
     size: 51
