@@ -2,6 +2,7 @@
 .env
 .venv
 .vscode
+.flake8
 venv/
 ENV/
 notebooks/
