@@ -1,0 +1,72 @@
+data_load:
+  cmd: python src/pipelines/load_data.py
+  deps:
+  - path: src/pipelines/load_data.py
+    md5: db4748329f3175c8581d1e66ac512fe4
+    size: 572
+  params:
+    params.yaml:
+      WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
+      data_save_paths:
+        iris_data_path: data/iris_data.fth
+        train_data_path: data/train.fth
+        test_data_path: data/test.fth
+  outs:
+  - path: data/iris_data.fth
+    md5: 17b91d53057699aa477d8e127419ff81
+    size: 5922
+splitting:
+  cmd: python src/pipelines/split.py
+  deps:
+  - path: data/iris_data.fth
+    md5: 17b91d53057699aa477d8e127419ff81
+    size: 5922
+  - path: src/pipelines/split.py
+    md5: 4698acfa2736897654ab033ce2a13eaa
+    size: 1024
+  params:
+    params.yaml:
+      WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
+      data_save_paths:
+        iris_data_path: data/iris_data.fth
+        train_data_path: data/train.fth
+        test_data_path: data/test.fth
+  outs:
+  - path: data/test.fth
+    md5: 6484b0e074790fa6bb4a346fb2773198
+    size: 4602
+  - path: data/train.fth
+    md5: 0204f1a3a712695b68c151532fffb102
+    size: 6690
+evaluation:
+  cmd: python src/pipelines/evaluate.py
+  deps:
+  - path: data/test.fth
+    md5: 6484b0e074790fa6bb4a346fb2773198
+    size: 4602
+  - path: data/train.fth
+    md5: 0204f1a3a712695b68c151532fffb102
+    size: 6690
+  - path: src/pipelines/evaluate.py
+    md5: c51ffb502d78e468f98892ad0fa2af55
+    size: 1889
+  params:
+    params.yaml:
+      WORK_DIR: /Users/vicolby/Desktop/Rubbles/dvcui_test
+      data_save_paths:
+        iris_data_path: data/iris_data.fth
+        train_data_path: data/train.fth
+        test_data_path: data/test.fth
+      metrics_save_paths:
+        cv_score_path: metrics/cv_roc_auc.json
+        test_score_path: metrics/test_roc_auc.json
+      model_params:
+        C: 1.0
+        fit_intercept: true
+  outs:
+  - path: metrics/cv_roc_auc.json
+    md5: a53bed785a972cb8fc0dd7451907159c
+    size: 18
+  - path: metrics/test_roc_auc.json
+    md5: e4c2e8edac362acab7123654b9e73432
+    size: 3

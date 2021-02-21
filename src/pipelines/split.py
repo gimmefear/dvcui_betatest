@@ -15,7 +15,7 @@ def split_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         Tuple[pd.DataFrame, pd.DataFrame]: train and test
     """
     data = df.copy()
-    train, test = train_test_split(data, test_size=0.2, shuffle=True)
+    train, test = train_test_split(data, test_size=0.2, shuffle=True, random_state=1)
     return train, test
 
 

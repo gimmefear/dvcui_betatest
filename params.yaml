@@ -4,3 +4,9 @@ data_save_paths:
   iris_data_path: 'data/iris_data.fth'
   train_data_path: 'data/train.fth'
   test_data_path: 'data/test.fth'
+metrics_save_paths:
+  cv_score_path: 'metrics/cv_roc_auc.json'
+  test_score_path: 'metrics/test_roc_auc.json'
+model_params:
+  C: 1.0
+  fit_intercept: True
